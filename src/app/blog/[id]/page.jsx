@@ -1,20 +1,6 @@
 import { quantico, russoOne } from "@/utils/fonts";
 import Image from "next/image";
 
-// const getSingleBlogData = async ({ id }) => {
-//   try {
-//     const res = await fetch(`http://localhost:3000/api/blogs/${id}`, {
-//       cache: "no-store",
-//     });
-//     if (!res.ok) {
-//       throw new Error("Failed to fetch data");
-//     }
-//     return res.json();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
 async function getSingleBlogData({ id }) {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + `/api/blogs/${id}`);
@@ -26,7 +12,7 @@ async function getSingleBlogData({ id }) {
     return await res.json();
   } catch (error) {
     console.error("Error fetching blog data:", error);
-    return []; // Return an empty array to match the expected return type
+    return [];
   }
 }
 
