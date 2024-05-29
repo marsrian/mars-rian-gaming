@@ -1,16 +1,10 @@
 "use client";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import useProfile from "@/components/layout/useProfile";
-import { Quantico } from "next/font/google";
+import { quantico } from "@/utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const quantico = Quantico({
-  weight: ["400",],
-  style: ["normal",],
-  subsets: ["latin"],
-});
 
 const GamesPage = () => {
   const [gameItems, setGameItems] = useState([]);

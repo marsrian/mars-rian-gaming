@@ -1,12 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import GameItemProps from "./GameItemProps";
-import { Quantico } from "next/font/google";
-
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import { quantico } from "@/utils/fonts";
 
 const GameFormPage = ({ onSubmit, gameItem }) => {
   const [name, setName] = useState(gameItem?.name || "");

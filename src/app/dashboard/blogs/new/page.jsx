@@ -1,6 +1,7 @@
 "use client"
 import BlogForm from "@/components/layout/BlogForm";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useState } from "react";
@@ -40,7 +41,7 @@ const NewBlogPage = () => {
     <section className="mt-8">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-2xl mx-auto">
-        <Link className="button" href={"/dashboard/blogs"}>
+        <Link className={`${quantico.className} button`} href={"/dashboard/blogs"}>
           Show all menu items
         </Link>
       </div>

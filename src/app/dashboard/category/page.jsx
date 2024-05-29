@@ -2,14 +2,9 @@
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import DeleteButton from "@/components/layout/DeleteButton";
 import useProfile from "@/components/layout/useProfile";
-import { Quantico } from "next/font/google";
+import { quantico } from "@/utils/fonts";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 const CategoryPage = () => {
   const [categoryName, setCategoryName] = useState("");

@@ -1,5 +1,6 @@
 "use client";
 
+import { quantico } from "@/utils/fonts";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +59,7 @@ const SignUpPage = () => {
   }
 
   return (
-    <div>
+    <div className={`${quantico.className}`}>
       <h1 className="text-center text-primary text-4xl mb-4">Register</h1>
       {userCreated && (
         <div className="my-4 text-center">

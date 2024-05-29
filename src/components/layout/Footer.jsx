@@ -1,12 +1,8 @@
-import { Quantico } from "next/font/google";
+import { quantico } from "@/utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

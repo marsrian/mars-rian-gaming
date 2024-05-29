@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useProfile from "./useProfile";
 import Image from "next/image";
 import AddressInputs from "./AddressInputs";
+import { quantico } from "@/utils/fonts";
 
 const UserForm = ({ user, onSave }) => {
   const [userName, setUserName] = useState(user?.name || "");
@@ -23,7 +24,7 @@ const UserForm = ({ user, onSave }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className={`${quantico.className} grid grid-cols-1 md:grid-cols-3 gap-6`}>
       <div className="col-span-1 p-2 rounded-lg">
         {user?.image && (
           <Image

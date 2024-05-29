@@ -1,6 +1,7 @@
 "use client";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import useProfile from "@/components/layout/useProfile";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -25,7 +26,7 @@ const UsersPage = () => {
   }
 
   return (
-    <section className="max-w-2xl mx-auto mt-8">
+    <section className={`${quantico.className} max-w-2xl mx-auto mt-8`}>
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8">
         {users?.length &&

@@ -1,5 +1,4 @@
 "use client";
-import { Quantico } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { FaAlignRight, FaTimes } from "react-icons/fa";
@@ -7,12 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import useProfile from "./useProfile";
+import { quantico } from "@/utils/fonts";
 
-const quantico = Quantico({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
 
 const Header = () => {
   const session = useSession();

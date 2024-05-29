@@ -1,15 +1,9 @@
 "use client";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import useProfile from "@/components/layout/useProfile";
-import { Quantico } from "next/font/google";
-import Image from "next/image";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 const BlogPage = () => {
   const [blogItems, setBlogItems] = useState([]);

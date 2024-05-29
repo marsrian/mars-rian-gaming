@@ -3,6 +3,7 @@ import Left from "@/components/Icons/Left";
 import BlogForm from "@/components/layout/BlogForm";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import DeleteButton from "@/components/layout/DeleteButton";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { redirect, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -72,15 +73,16 @@ const EditBlogPage = () => {
     <section className="mt-8">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-md mx-auto">
-        <Link className="button" href={"/dashboard/blogs"}>
+        <Link className={`${quantico.className} button`} href={"/dashboard/blogs"}>
           <Left /> Show all Blogs
         </Link>
       </div>
       <BlogForm blogItem={blogItem} onSubmit={handleFormSubmit} />
-      <div className="my-4">
+      <div className={`${quantico.className} my-4`}>
         <DeleteButton
           label="Delete this blog item"
           onDelete={handleDeleteClick}
+          className={`${quantico.className}`}
         />
       </div>
     </section>

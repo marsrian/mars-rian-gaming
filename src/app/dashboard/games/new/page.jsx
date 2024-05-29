@@ -1,6 +1,7 @@
 "use client"
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import GameFormPage from "@/components/layout/GameFormPage";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useState } from "react";
@@ -40,7 +41,7 @@ const NewGamePage = () => {
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-2xl mx-auto">
-        <Link className="button border border-gray-600 rounded-md p-2" href={"/dashboard/games"}>
+        <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/games"}>
           Show all menu items
         </Link>
       </div>

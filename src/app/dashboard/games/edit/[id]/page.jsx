@@ -3,6 +3,7 @@ import Left from "@/components/Icons/Left";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import DeleteButton from "@/components/layout/DeleteButton";
 import GameFormPage from "@/components/layout/GameFormPage";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { redirect, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -72,12 +73,12 @@ const EditGamePage = () => {
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-md mx-auto">
-        <Link className="button border border-gray-600 rounded-md p-2" href={"/dashboard/games"}>
+        <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/games"}>
           <Left /> Show all games
         </Link>
       </div>
       <GameFormPage gameItem={gameItem} onSubmit={handleFormSubmit} />
-      <div className="max-w-[562px] ml-auto my-4">
+      <div className={`${quantico.className} max-w-[562px] ml-auto my-4`}>
           <DeleteButton 
             label="Delete this game item"
             onDelete={handleDeleteClick}

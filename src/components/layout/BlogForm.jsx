@@ -1,11 +1,7 @@
-import { Quantico } from "next/font/google";
 import { useEffect, useState } from "react";
 import GameDescProps from "./GameDescProps";
+import { quantico } from "@/utils/fonts";
 
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 const BlogForm = ({ onSubmit, blogItem }) => {
   const [title, setTitle] = useState(blogItem?.title || "");

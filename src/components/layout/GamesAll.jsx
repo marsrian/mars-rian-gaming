@@ -1,10 +1,11 @@
-import { Micro_5_Charted, Quantico } from "next/font/google";
+import { microCharted, quantico } from "@/utils/fonts";
 import Link from "next/link";
 
 async function getGameData() {
-  const res = await fetch("http://localhost:3000/api/games", {
-    cache: "no-cache",
-  });
+  const res = await fetch(process.env.NEXTAUTH_URL + "/api/games",{
+    cache: "force-cache"
+  }
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -12,16 +13,6 @@ async function getGameData() {
 
   return res.json();
 }
-
-const microCharted = Micro_5_Charted({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 const GamesAll = async () => {
   const games = await getGameData();

@@ -1,11 +1,9 @@
-import { Quantico, Russo_One } from "next/font/google";
+import { quantico, russoOne } from "@/utils/fonts";
 import Image from "next/image";
 
 const getSingleGameData = async ({ id }) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/games/${id}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(process.env.NEXTAUTH_URL + `/api/games/${id}`);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -15,22 +13,9 @@ const getSingleGameData = async ({ id }) => {
   }
 };
 
-const russoOne = Russo_One({
-  weight: ["400",],
-  style: ["normal",],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const quantico = Quantico({
-  weight: ["400",],
-  style: ["normal",],
-  subsets: ["latin"],
-  display: "swap",
-});
-
 const SingleGameInfoPage = async ({ params }) => {
-  const { game } = await getSingleGameData(params);
+  const { game } = await getSingleGameData(params._id);
+  console.log({game})
   const { _id, name, image, description, videos } = game;
   return (
     <div className="mb-8 px-4 md:px-0">
@@ -43,7 +28,7 @@ const SingleGameInfoPage = async ({ params }) => {
       />
       <h1 className={`${russoOne.className} text-gray-700 text-3xl font-bold italic mt-3`}>{name}</h1>
       <p className="mt-2 text-justify">{description}</p>
-      {videos.length > 0 &&
+      {videos?.length > 0 &&
         videos.map((v) => {
           return (
             <div key={v._id} className="mt-6">

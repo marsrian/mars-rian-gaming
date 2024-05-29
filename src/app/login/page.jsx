@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { quantico } from "@/utils/fonts";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ const LoginPage = () => {
     setLoginInProgress(false);
   }
   return (
-    <div>
+    <div className={`${quantico.className}`}>
       <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
         <div className="flex flex-col gap-1 mb-2">

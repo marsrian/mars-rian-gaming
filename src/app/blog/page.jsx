@@ -1,28 +1,25 @@
+import { microCharted, quantico } from "@/utils/fonts";
 import Link from "next/link";
-import { Micro_5_Charted, Quantico } from "next/font/google";
 import { FaRegCalendarAlt, FaRegListAlt } from "react-icons/fa";
 
 async function getBlogData() {
-  const res = await fetch("http://localhost:3000/api/blogs", {
-    cache: "no-cache",
-  });
+  try {
+    const res = await fetch(process.env.NEXTAUTH_URL + "/api/blogs", {
+      next: {
+        revalidate: 10,
+      }
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    return []; // Return an empty array to match the expected return type
   }
-
-  return res.json();
 }
-
-const microCharted = Micro_5_Charted({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 // Utility function to format the date
 const formatDate = (dateString) => {

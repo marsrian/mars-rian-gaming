@@ -1,17 +1,6 @@
-import { Quantico, Trade_Winds } from "next/font/google";
+import { quantico, tradeWinds } from "@/utils/fonts";
 import Image from "next/image";
 
-const tradeWinds = Trade_Winds({
-    weight: ["400"],
-    style: ["normal"],
-    subsets: ["latin"],
-  });
-
-  const quantico = Quantico({
-    weight: ["400",],
-    style: ["normal",],
-    subsets: ["latin"],
-  });
 
 const HeroSection = () => {
   return (

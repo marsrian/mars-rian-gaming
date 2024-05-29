@@ -1,11 +1,7 @@
-import { Quantico } from "next/font/google";
+import { quantico } from "@/utils/fonts";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const quantico = Quantico({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 const DashBoardTabs = ({ isAdmin }) => {
   const pathName = usePathname();
