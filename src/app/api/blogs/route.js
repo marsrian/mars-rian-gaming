@@ -12,7 +12,7 @@ export async function POST(req) {
 export async function GET() {
   await connectMongo();
   const blogs = await Blog.find();
-  return Response.json(blogs);
+  return NextResponse.json(blogs);
 }
 
 export async function PUT(req) {

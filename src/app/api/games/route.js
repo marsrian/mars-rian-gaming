@@ -12,7 +12,7 @@ export async function POST(req) {
 export async function GET() {
   await connectMongo();
   const games = await Game.find();
-  return Response.json(games);
+  return NextResponse.json(games);
 }
 
 export async function PUT(req) {
