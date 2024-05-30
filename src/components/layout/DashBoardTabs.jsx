@@ -42,7 +42,7 @@ const DashBoardTabs = ({ isAdmin }) => {
             Blogs
           </Link>
           <Link
-            className={pathName === "/dashboard/users" ? "text-green-400" : ""}
+            className={pathName.includes("dashboard/users") ? "text-green-400" : ""}
             href="/dashboard/users"
           >
             Users

@@ -1,4 +1,5 @@
 "use client";
+import Right from "@/components/Icons/Right";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import useProfile from "@/components/layout/useProfile";
 import { quantico } from "@/utils/fonts";
@@ -28,14 +29,14 @@ const GamesPage = () => {
   return (
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
-      <div className={`${quantico.className} mt-8`}>
+      <div className={`${quantico.className} mt-8 max-w-2xl mx-auto`}>
         <Link className="button border border-gray-600 rounded-md p-2" href={"/dashboard/games/new"}>
-          Create new menu item
+          Create new game walkthrough <Right />
         </Link>
       </div>
       <div className={`${quantico.className}`}>
         <h2 className="text-sm text-gray-500 mt-8">Edit game item:</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
           {gameItems.length > 0 &&
             gameItems.map((item) => (
               <Link
@@ -45,14 +46,14 @@ const GamesPage = () => {
               >
                 <div className="relative">
                   <Image
-                    className="rounded-md"
+                    className="rounded-md w-full h-36 md:h-[200px]"
                     src={item.image}
-                    alt={""}
+                    alt={item.name}
                     width={200}
                     height={200}
                   />
                 </div>
-                <div className="text-center">{item.name}</div>
+                <div className="text-center mt-1">{item.name}</div>
               </Link>
             ))}
         </div>

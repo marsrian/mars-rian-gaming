@@ -1,4 +1,5 @@
 "use client"
+import Left from "@/components/Icons/Left";
 import BlogForm from "@/components/layout/BlogForm";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import { quantico } from "@/utils/fonts";
@@ -38,11 +39,11 @@ const NewBlogPage = () => {
   }
 
   return (
-    <section className="mt-8">
+    <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-2xl mx-auto">
-        <Link className={`${quantico.className} button`} href={"/dashboard/blogs"}>
-          Show all menu items
+        <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/blogs"}>
+          <Left /> Show all blogs
         </Link>
       </div>
       <BlogForm blogItem={null} onSubmit={handleFormSubmit} />

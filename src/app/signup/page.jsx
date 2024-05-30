@@ -1,10 +1,9 @@
 "use client";
-
 import { quantico } from "@/utils/fonts";
 import { signIn } from "next-auth/react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
@@ -112,24 +111,17 @@ const SignUpPage = () => {
         <button
           type="button"
           onClick={() => signIn("google", { callbackUrl: "/" })}
-          className="flex gap-4 justify-center"
+          className="flex gap-2 items-center justify-center bg-emerald-600 text-white mt-1 mb-2"
         >
-          {/* <Image src={"/google.png"} alt={""} width={24} height={24} /> */}
-          Login with google
+          <FcGoogle /> Login with google
         </button>
         <div className="text-center my-4 text-gray-500 border-t pt-4">
           Existing account?{" "}
-          <Link className="underline" href={"/login"}>
+          <Link className="underline" href={"/login"} >
             Login here &raquo;
           </Link>
         </div>
       </form>
-      {/* <p className="text-center">
-        Already have an account?{" "}
-        <Link href="/login" className="text-blue-500 font-lg">
-          Login
-        </Link>
-      </p> */}
     </div>
   );
 };

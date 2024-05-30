@@ -8,7 +8,6 @@ import { useSession, signOut } from "next-auth/react";
 import useProfile from "./useProfile";
 import { quantico } from "@/utils/fonts";
 
-
 const Header = () => {
   const session = useSession();
   const status = session.status;
@@ -91,9 +90,9 @@ const Header = () => {
         <div className="hidden md:flex gap-6">
           {status === "authenticated" && (
             <div className="flex items-center">
-              <Link href="/profile" className="whitespace-nowrap mr-2">
+              <p className="whitespace-nowrap mr-2">
                 Hello, {userName}
-              </Link>
+              </p>
               <button
                 onClick={() => signOut()}
                 className="bg-green-600 rounded-full text-white px-8 py-2"
@@ -142,17 +141,41 @@ const Header = () => {
                   >
                     <li>Blog</li>
                   </Link>
-                  <Link
-                    href="/dashboard/category"
-                    className={
-                      pathName.includes("dashboard") ? "text-green-300" : ""
-                    }
-                  >
-                    <li>Dashboard</li>
-                  </Link>
+                  {data.admin === true && (
+                    <Link
+                      href="/dashboard/category"
+                      className={
+                        pathName.includes("dashboard") ? "text-green-300" : ""
+                      }
+                    >
+                      <li>Dashboard</li>
+                    </Link>
+                  )}
                 </ul>
-                <div className="flex flex-col gap-3 text-white font-semibold mt-8 md:hidden">
-                  <Link href="/login">Login</Link>
+                <div className="block md:hidden mt-6">
+                  {status === "authenticated" && (
+                    <div className="flex flex-col gap-3">
+                      <p className="whitespace-nowrap">
+                        {userName}
+                      </p>
+                      <button
+                        onClick={() => signOut()}
+                        className="bg-green-600 rounded-full text-white px-8 py-2"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                  {status === "unauthenticated" && (
+                    <>
+                      <Link
+                        href="/login"
+                        className={pathName === "/login" ? "text-green-300" : ""}
+                      >
+                        Login
+                      </Link>
+                    </>
+                  )}
                 </div>
               </div>
               <button

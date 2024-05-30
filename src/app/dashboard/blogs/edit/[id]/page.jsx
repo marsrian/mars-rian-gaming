@@ -70,15 +70,15 @@ const EditBlogPage = () => {
   }
 
   return (
-    <section className="mt-8">
+    <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-md mx-auto">
-        <Link className={`${quantico.className} button`} href={"/dashboard/blogs"}>
+        <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/blogs"}>
           <Left /> Show all Blogs
         </Link>
       </div>
       <BlogForm blogItem={blogItem} onSubmit={handleFormSubmit} />
-      <div className={`${quantico.className} my-4`}>
+      <div className={`${quantico.className} my-4 bg-orange-800 text-white rounded-xl`}>
         <DeleteButton
           label="Delete this blog item"
           onDelete={handleDeleteClick}

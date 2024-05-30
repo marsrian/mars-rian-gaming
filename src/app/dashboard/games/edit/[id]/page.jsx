@@ -78,7 +78,7 @@ const EditGamePage = () => {
         </Link>
       </div>
       <GameFormPage gameItem={gameItem} onSubmit={handleFormSubmit} />
-      <div className={`${quantico.className} max-w-[562px] ml-auto my-4`}>
+      <div className={`${quantico.className} max-w-[562px] ml-auto my-4 bg-orange-800 text-white rounded-xl`}>
           <DeleteButton 
             label="Delete this game item"
             onDelete={handleDeleteClick}

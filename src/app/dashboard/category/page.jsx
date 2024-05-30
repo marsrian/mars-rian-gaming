@@ -1,10 +1,12 @@
 "use client";
+import Trash from "@/components/Icons/Trash";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import DeleteButton from "@/components/layout/DeleteButton";
 import useProfile from "@/components/layout/useProfile";
 import { quantico } from "@/utils/fonts";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { FaEdit } from "react-icons/fa";
 
 const CategoryPage = () => {
   const [categoryName, setCategoryName] = useState("");
@@ -103,7 +105,7 @@ const CategoryPage = () => {
         />
         <button
           type="submit"
-          className="border bg-blue-300 rounded-md text-white font-semibold max-w-lg mx-auto p-2"
+          className="border rounded-md text-white font-semibold max-w-lg mx-auto p-2"
         >
           {editableCategory ? "Update Category" : "New Category"}
         </button>
@@ -126,11 +128,11 @@ const CategoryPage = () => {
                       setCategoryName(category.name);
                     }}
                   >
-                    Edit
+                    <FaEdit title="Edit" className="text-2xl text-gray-600" />
                   </button>
                   <DeleteButton
                     onDelete={() => handleDeleteCategory(category._id)}
-                    label="Delete"
+                    label={<Trash />}
                   />
                 </div>
               </div>

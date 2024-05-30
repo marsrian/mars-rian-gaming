@@ -1,4 +1,5 @@
 "use client"
+import Left from "@/components/Icons/Left";
 import DashBoardTabs from "@/components/layout/DashBoardTabs";
 import GameFormPage from "@/components/layout/GameFormPage";
 import { quantico } from "@/utils/fonts";
@@ -42,7 +43,7 @@ const NewGamePage = () => {
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-2xl mx-auto">
         <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/games"}>
-          Show all menu items
+          <Left /> Show all games
         </Link>
       </div>
       <GameFormPage gameItem={null} onSubmit={handleFormSubmit} />

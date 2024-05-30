@@ -8,9 +8,9 @@ const DeleteButton = ({ onDelete, label }) => {
     return (
       <div className="fixed bg-black/80 inset-0 flex items-center h-full justify-center">
         <div className={`${quantico.className} bg-white p-4 rounded-lg`}>
-          <div className="text-center">Are you want to delete?</div>
+          <div className="text-center text-gray-900">Are you want to delete?</div>
           <div className="flex gap-2 mt-1">
-            <button type="button" onClick={() => setShowConfirm(false)}>
+            <button type="button" onClick={() => setShowConfirm(false)} className="border p-2 text-gray-900">
               Cancel
             </button>
             <button
