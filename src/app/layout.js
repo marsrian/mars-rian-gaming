@@ -15,15 +15,17 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen max-w-6xl mx-auto`}>
+      <body
+        className={`${inter.className} flex flex-col min-h-screen max-w-6xl mx-auto 
+        bg-[url(/bg-1.jpg)] 
+        bg-cover bg-center`}
+      >
         <AppProvider>
           <Toaster />
           <div className="sticky top-0 z-10">
             <Header />
           </div>
-          <main className="flex-grow">
-            {children}
-          </main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </AppProvider>
       </body>
