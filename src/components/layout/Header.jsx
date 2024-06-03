@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <div
       className={`sticky top-0 z-10 ${
-        isScrolled ? "bg-white" : "bg-transparent"
+        isScrolled ? "bg-[url(/bg-1.jpg)]" : "bg-transparent"
       }`}
     >
       <div
