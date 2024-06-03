@@ -23,7 +23,7 @@ const LoginPage = () => {
       <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
         <div className="flex flex-col gap-1 mb-2">
-          <label>Email</label>
+          <label className="text-zinc-200">Email</label>
           <input
             type="email"
             placeholder="email"
@@ -34,7 +34,7 @@ const LoginPage = () => {
           />
         </div>
         <div className="flex flex-col gap-1 mb-2">
-          <label>Password</label>
+          <label className="text-zinc-200">Password</label>
           <input
             type="password"
             placeholder="password"
@@ -44,10 +44,10 @@ const LoginPage = () => {
             className="border rounded-md border-gray-500 p-2"
           />
         </div>
-        <button disabled={loginInProgress} type="submit">
+        <button disabled={loginInProgress} type="submit" className="mt-2">
           Login
         </button>
-        <div className="my-4 text-center text-gray-500">
+        <div className="my-4 text-center text-white">
           or login with provider
         </div>
         <button
@@ -57,7 +57,7 @@ const LoginPage = () => {
         >
           <FcGoogle /> Login with google
         </button>
-        <div className="text-center my-4 text-gray-500 border-t pt-4">
+        <div className="text-center my-4 text-white border-t pt-4">
         Don&apos;t have an account?{" "}
           <Link className="underline" href="/signup" >
           SignUp here &raquo;

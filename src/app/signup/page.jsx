@@ -79,7 +79,7 @@ const SignUpPage = () => {
       )}
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
         <div className="flex flex-col gap-1 mb-2">
-          <label>Email</label>
+          <label className="text-zinc-200">Email</label>
           <input
             type="email"
             placeholder="email"
@@ -91,7 +91,7 @@ const SignUpPage = () => {
           {emailError && <p className="text-red-500">{emailError}</p>}
         </div>
         <div className="flex flex-col gap-1 mb-2">
-          <label>Password</label>
+          <label className="text-zinc-200">Password</label>
           <input
             type="password"
             placeholder="password"
@@ -102,10 +102,10 @@ const SignUpPage = () => {
           />
           {passwordError && <p className="text-red-500">{passwordError}</p>}
         </div>
-        <button type="submit" disabled={creatingUser}>
+        <button type="submit" disabled={creatingUser} className="mt-2">
           Register
         </button>
-        <div className="my-4 text-center text-gray-500">
+        <div className="my-4 text-center text-white">
           or login with provider
         </div>
         <button
@@ -115,7 +115,7 @@ const SignUpPage = () => {
         >
           <FcGoogle /> Login with google
         </button>
-        <div className="text-center my-4 text-gray-500 border-t pt-4">
+        <div className="text-center my-4 text-white border-t pt-4">
           Existing account?{" "}
           <Link className="underline" href={"/login"} >
             Login here &raquo;

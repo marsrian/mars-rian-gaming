@@ -57,15 +57,19 @@ const Header = () => {
             className="rounded-full"
           />
         </Link>
-        <ul className="hidden md:flex gap-6">
+        <ul className="hidden md:flex gap-6 text-white font-medium">
           <Link href="/" className={pathName === "/" ? "text-green-300" : ""}>
             <li>Home</li>
           </Link>
           <Link
-            href="/category"
-            className={pathName === "/category" ? "text-green-300" : ""}
+            href="/games"
+            className={
+              pathName === "/games" || pathName.includes("games/")
+                ? "text-green-300"
+                : ""
+            }
           >
-            <li>Category</li>
+            <li>Games</li>
           </Link>
           <Link
             href="/blog"
@@ -87,12 +91,10 @@ const Header = () => {
             </Link>
           )}
         </ul>
-        <div className="hidden md:flex gap-6">
+        <div className="hidden md:flex gap-6 text-white">
           {status === "authenticated" && (
             <div className="flex items-center">
-              <p className="whitespace-nowrap mr-2">
-                Hello, {userName}
-              </p>
+              <p className="whitespace-nowrap mr-2">Hello, {userName}</p>
               <button
                 onClick={() => signOut()}
                 className="bg-green-600 rounded-full text-white px-8 py-2"
@@ -102,9 +104,14 @@ const Header = () => {
             </div>
           )}
           {status === "unauthenticated" && (
-            <>
-              <Link href="/login">Login</Link>
-            </>
+            <div className={`border px-4 py-2 rounded-md`}>
+              <Link
+                href="/login"
+                className={pathName === "/login" ? "text-green-300" : ""}
+              >
+                Login
+              </Link>
+            </div>
           )}
         </div>
         <div className="flex md:hidden">
@@ -126,10 +133,14 @@ const Header = () => {
                     <li>Home</li>
                   </Link>
                   <Link
-                    href="/category"
-                    className={pathName === "/category" ? "text-green-300" : ""}
+                    href="/games"
+                    className={
+                      pathName === "/games" || pathName.includes("games/")
+                        ? "text-green-300"
+                        : ""
+                    }
                   >
-                    <li>Category</li>
+                    <li>Games</li>
                   </Link>
                   <Link
                     href="/blog"
@@ -155,9 +166,7 @@ const Header = () => {
                 <div className="block md:hidden mt-6">
                   {status === "authenticated" && (
                     <div className="flex flex-col gap-3">
-                      <p className="whitespace-nowrap">
-                        {userName}
-                      </p>
+                      <p className="whitespace-nowrap">{userName}</p>
                       <button
                         onClick={() => signOut()}
                         className="bg-green-600 rounded-full text-white px-8 py-2"
@@ -170,7 +179,9 @@ const Header = () => {
                     <>
                       <Link
                         href="/login"
-                        className={pathName === "/login" ? "text-green-300" : ""}
+                        className={
+                          pathName === "/login" ? "text-green-300" : ""
+                        }
                       >
                         Login
                       </Link>

@@ -6,8 +6,12 @@ const HomePage = () => {
   return (
     <div className="mt-8 mb-6">
       <HeroSection />
-      <GamesPage />
+      <div className="mt-20">
+       <GamesPage />
+      </div>
+      <div className="mt-20">
       <BlogPage />
+      </div>
     </div>
   );
 };

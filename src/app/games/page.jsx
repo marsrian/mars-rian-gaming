@@ -1,6 +1,5 @@
 import { microCharted, quantico } from "@/utils/fonts";
 import Link from "next/link";
-import { FaRegCalendarAlt, FaRegListAlt } from "react-icons/fa";
 
 async function getGameData() {
   try {
@@ -15,7 +14,7 @@ async function getGameData() {
     return await res.json();
   } catch (error) {
     console.error("Error fetching Game data:", error);
-    return []; // Return an empty array to match the expected return type
+    return [];
   }
 }
 
@@ -24,7 +23,7 @@ const GamesPage = async () => {
   return (
     <div className="mt-12">
       <h1
-        className={`${microCharted.className} text-4xl font-bold text-center text-emerald-600`}
+        className={`${microCharted.className} text-4xl font-bold text-center text-white`}
       >
         ALL GAMES WALKTHROUGH
       </h1>

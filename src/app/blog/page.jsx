@@ -43,7 +43,7 @@ const BlogPage = async () => {
   return (
     <div className="mt-12">
       <h1
-        className={`${microCharted.className} text-4xl font-bold text-center text-emerald-600`}
+        className={`${microCharted.className} text-4xl font-bold text-center text-white`}
       >
         BLOG POST
       </h1>

@@ -22,16 +22,16 @@ const SingleBlogPage = async ({ params }) => {
   return (
     <div className="mb-4 md:mb-8 px-4 md:px-0">
       <h1
-        className={`${russoOne.className} text-gray-700 text-xl md:text-3xl font-bold italic mt-3`}
+        className={`${russoOne.className} text-white text-xl md:text-3xl font-bold italic mt-3`}
       >
         {title}
       </h1>
-      <p className="mt-2">Category: {category}</p>
+      <p className="mt-2 text-gray-300">Category: {category}</p>
       {desc.length > 0 &&
         desc.map((d) => {
           return (
             <div key={d._id} className="mt-6">
-              <p className={`${quantico.className} mb-2`}>{d.description}</p>
+              <p className={`${quantico.className} mb-2 text-zinc-100`}>{d.description}</p>
               {d.imageLink && (
                 <Image
                   src={d.imageLink}
@@ -47,7 +47,7 @@ const SingleBlogPage = async ({ params }) => {
       {video && (
         <div>
           <h1
-            className={`${russoOne.className} text-gray-700 text-xl font-semibold italic mt-6 mb-1`}
+            className={`${russoOne.className} text-white text-xl font-semibold italic mt-6 mb-1`}
           >
             Video tutorial:
           </h1>

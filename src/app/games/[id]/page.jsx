@@ -39,13 +39,13 @@ const SingleGameInfoPage = async ({ params }) => {
         alt={name}
         className="w-full max-h-96"
       />
-      <h1 className={`${russoOne.className} text-gray-700 text-3xl font-bold italic mt-3`}>{name}</h1>
-      <p className="mt-2 text-justify">{description}</p>
+      <h1 className={`${russoOne.className} text-white text-3xl font-bold italic mt-3`}>{name}</h1>
+      <p className={`${quantico.className} mt-2 text-justify text-zinc-200 md:leading-6`}>{description}</p>
       {videos?.length > 0 &&
         videos.map((v) => {
           return (
             <div key={v._id} className="mt-6">
-              <h1 className={`${quantico.className} mb-2 text-3xl`}>Chapter - {v.serial} gameplay</h1>
+              <h1 className={`${quantico.className} mb-2 text-3xl text-white`}>Chapter - {v.serial} gameplay</h1>
               <iframe src={v.videoLink} frameborder="0" allowfullscreen className="w-full h-60 md:h-[600px]" />
             </div>
           );
