@@ -73,7 +73,7 @@ const EditBlogPage = () => {
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-md mx-auto">
-        <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/blogs"}>
+        <Link className={`${quantico.className} button border border-white text-white rounded-md p-2`} href={"/dashboard/blogs"}>
           <Left /> Show all Blogs
         </Link>
       </div>

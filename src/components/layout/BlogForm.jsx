@@ -38,7 +38,7 @@ const BlogForm = ({ onSubmit, blogItem }) => {
       className={`${quantico.className} mt-4`}
     >
       <div className="flex flex-col gap-1">
-        <label>Title</label>
+        <label className="text-white">Title</label>
         <input
           type="text"
           value={title}
@@ -46,7 +46,7 @@ const BlogForm = ({ onSubmit, blogItem }) => {
           placeholder="Game Name"
           className="p-2 border rounded mb-2"
         />
-        <label>Category</label>
+        <label className="text-white">Category</label>
         <select
           value={category}
           onChange={(ev) => setCategory(ev.target.value)}
@@ -59,7 +59,7 @@ const BlogForm = ({ onSubmit, blogItem }) => {
               </option>
             ))}
         </select>
-        <label>Video</label>
+        <label className="text-white">Video</label>
         <input
           type="text"
           value={video}
@@ -67,7 +67,7 @@ const BlogForm = ({ onSubmit, blogItem }) => {
           placeholder="Game Description"
           className="p-2 border rounded mb-2"
         />
-        <label>Add Description:</label>
+        <label className="text-white">Add Description:</label>
         <GameDescProps
           name="Descriptions"
           props={desc}

@@ -62,7 +62,7 @@ const UserForm = ({ user, onSave }) => {
         }
       >
         <div className="flex flex-col mb-2">
-          <label>First and Last name</label>
+          <label className="text-white">First and Last name</label>
           <input
             type="text"
             placeholder="First and Last name"
@@ -72,12 +72,12 @@ const UserForm = ({ user, onSave }) => {
           />
         </div>
         <div className="flex flex-col mb-2">
-          <label>Email</label>
+          <label className="text-white">Email</label>
           <input
             type="email"
             disabled={true}
             value={user?.email}
-            className="border p-2 rounded-md text-gray-500"
+            className="border p-2 rounded-md text-gray-300"
           />
         </div>
         <AddressInputs
@@ -104,7 +104,7 @@ const UserForm = ({ user, onSave }) => {
                 checked={admin}
                 onChange={(ev) => setAdmin(ev.target.checked)}
               />
-              <span>Admin</span>
+              <span className="text-white">Admin</span>
             </label>
           </div>
         )}

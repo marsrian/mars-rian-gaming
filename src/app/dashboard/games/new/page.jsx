@@ -42,7 +42,7 @@ const NewGamePage = () => {
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8 max-w-2xl mx-auto">
-        <Link className={`${quantico.className} button border border-gray-600 rounded-md p-2`} href={"/dashboard/games"}>
+        <Link className={`${quantico.className} button border border-white text-white rounded-md p-2`} href={"/dashboard/games"}>
           <Left /> Show all games
         </Link>
       </div>

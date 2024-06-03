@@ -90,7 +90,7 @@ const CategoryPage = () => {
         onSubmit={handleFormSubmit}
         className={`${quantico.className} flex flex-col gap-2 mt-8`}
       >
-        <label className="">
+        <label className="text-white">
           {editableCategory ? "Update Category name:" : "New category name"}
           {editableCategory && (
             <span className="ml-2 font-semibold">{editableCategory?.name}</span>
@@ -117,7 +117,7 @@ const CategoryPage = () => {
             categories.map((category) => (
               <div
                 key={category._id}
-                className="flex items-center justify-between border p-2 rounded-md mb-2"
+                className="flex items-center justify-between border p-2 rounded-md mb-2 text-white"
               >
                 <h3>{category.name}</h3>
                 <div className="flex gap-6">
@@ -128,7 +128,7 @@ const CategoryPage = () => {
                       setCategoryName(category.name);
                     }}
                   >
-                    <FaEdit title="Edit" className="text-2xl text-gray-600" />
+                    <FaEdit title="Edit" className="text-2xl text-white" />
                   </button>
                   <DeleteButton
                     onDelete={() => handleDeleteCategory(category._id)}

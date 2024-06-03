@@ -44,7 +44,7 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
         <div className="flex flex-col gap-1">
-          <label>Image</label>
+          <label className="text-white">Image</label>
           <input
             type="text"
             value={image}
@@ -54,7 +54,7 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
           />
         </div>
         <div className="flex flex-col gap-1">
-          <label>Name</label>
+          <label className="text-white">Name</label>
           <input
             type="text"
             value={name}
@@ -62,7 +62,7 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
             placeholder="Game Name"
             className="p-2 border rounded mb-2"
           />
-          <label>Description</label>
+          <label className="text-white">Description</label>
           <input
             type="text"
             value={description}
@@ -70,7 +70,7 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
             placeholder="Game Description"
             className="p-2 border rounded mb-2"
           />
-          <label>Category</label>
+          <label className="text-white">Category</label>
           <select
             value={category}
             onChange={(ev) => setCategory(ev.target.value)}
@@ -83,7 +83,7 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
                 </option>
               ))}
           </select>
-          <label>Add Video:</label>
+          <label className="text-white">Add Video:</label>
           <GameItemProps
             name="Videos"
             props={videos}

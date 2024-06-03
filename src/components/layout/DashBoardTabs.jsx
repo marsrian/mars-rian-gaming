@@ -7,7 +7,7 @@ const DashBoardTabs = ({ isAdmin }) => {
   const pathName = usePathname();
   return (
     <div
-      className={`${quantico.className} flex justify-center items-center gap-6`}
+      className={`${quantico.className} flex justify-center items-center gap-6 text-white`}
     >
       <Link
         className={pathName === "/dashboard/profile" ? "text-green-400" : ""}

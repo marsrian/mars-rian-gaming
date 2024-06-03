@@ -30,7 +30,7 @@ const GamesPage = () => {
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className={`${quantico.className} mt-8 max-w-2xl mx-auto`}>
-        <Link className="button border border-gray-600 rounded-md p-2" href={"/dashboard/games/new"}>
+        <Link className="button border border-white rounded-md p-2 text-white" href={"/dashboard/games/new"}>
           Create new game walkthrough <Right />
         </Link>
       </div>

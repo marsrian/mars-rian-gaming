@@ -57,7 +57,7 @@ const BlogPage = () => {
       <DashBoardTabs isAdmin={true} />
       <div className={`${quantico.className} mt-8 max-w-2xl mx-auto`}>
         <Link
-          className="button border border-gray-600 rounded-md p-2"
+          className="button border border-white text-white rounded-md p-2"
           href={"/dashboard/blogs/new"}
         >
           Create new Blog <Right />
