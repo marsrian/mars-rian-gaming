@@ -61,7 +61,7 @@ const ProfilePage = () => {
   return (
     <div className="mt-6 px-2 md:px-0">
       <DashBoardTabs isAdmin={isAdmin} />
-      <div className="max-w-md mx-auto mt-8">
+      <div className="mt-8">
         <UserForm user={user} onSave={handleProfileInfoUpdate} />
       </div>
     </div>
