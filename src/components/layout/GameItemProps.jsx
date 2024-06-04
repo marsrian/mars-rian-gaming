@@ -44,7 +44,7 @@ const GameItemProps = ({ name, props, setProps, addLabel }) => {
           props.map((video, index) => (
             <div
               key={index}
-              className="flex border py-2 rounded-md"
+              className="flex flex-col md:flex-row border py-2 rounded-md"
             >
               <div className="">
                 <label>Serial:</label>
@@ -56,7 +56,7 @@ const GameItemProps = ({ name, props, setProps, addLabel }) => {
                   className="p-2 border rounded-md"
                 />
               </div>
-              <div className="">
+              <div className="mt-2 md:mt-0">
                 <label>Video Link:</label>
                 <input
                   type="text"

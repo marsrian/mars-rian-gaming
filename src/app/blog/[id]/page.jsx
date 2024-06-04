@@ -31,7 +31,11 @@ const SingleBlogPage = async ({ params }) => {
         desc.map((d) => {
           return (
             <div key={d._id} className="mt-6">
-              <p className={`${quantico.className} mb-2 text-zinc-100`}>{d.description}</p>
+              {d.description && (
+                <p className={`${quantico.className} mb-2 text-zinc-100`}>
+                  {d.description}
+                </p>
+              )}
               {d.imageLink && (
                 <Image
                   src={d.imageLink}

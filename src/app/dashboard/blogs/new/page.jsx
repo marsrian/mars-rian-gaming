@@ -41,7 +41,7 @@ const NewBlogPage = () => {
   return (
     <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
-      <div className="mt-8 max-w-2xl mx-auto">
+      <div className="mt-8">
         <Link className={`${quantico.className} button border border-white text-white rounded-md p-2`} href={"/dashboard/blogs"}>
           <Left /> Show all blogs
         </Link>

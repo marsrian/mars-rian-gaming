@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-button, .button{
-    @apply flex w-full justify-center gap-2 font-semibold;
-    @apply rounded-xl px-6 py-2;
+button,
+.button {
+  @apply flex w-full justify-center gap-2 font-semibold;
+  @apply rounded-xl px-6 py-2;
 }
 
-button[type="submit"], .submit, button.primary{
-    @apply bg-emerald-600 text-white;
+button[type="submit"],
+.submit,
+button.primary {
+  @apply bg-emerald-600 text-white;
 }
+
