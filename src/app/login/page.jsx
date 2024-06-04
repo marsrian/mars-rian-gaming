@@ -9,10 +9,30 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginInProgress, setLoginInProgress] = useState(false);
+  const [error, setError] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   async function handleFormSubmit(ev) {
     ev.preventDefault();
     setLoginInProgress(true);
+    setError(false);
+    setError("");
+    setEmailError("");
+    setPasswordError("");
+
+    // Validate Email:
+    if (!email) {
+      setEmailError("Email cannot be empty.");
+      setLoginInProgress(false);
+      return;
+    }
+    // Validate password:
+    if (!password) {
+      setPasswordError("Password cannot be empty.");
+      setLoginInProgress(false);
+      return;
+    }
 
     await signIn("credentials", { email, password, callbackUrl: "/" });
 
@@ -21,6 +41,13 @@ const LoginPage = () => {
   return (
     <div className={`${quantico.className}`}>
       <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
+      {error && (
+        <div className="my-4 text-center">
+          An error has occurred.
+          <br />
+          Please try again later
+        </div>
+      )}
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
         <div className="flex flex-col gap-1 mb-2">
           <label className="text-zinc-200">Email</label>
@@ -30,8 +57,9 @@ const LoginPage = () => {
             value={email}
             disabled={loginInProgress}
             onChange={(ev) => setEmail(ev.target.value)}
-            className="border rounded-md border-gray-500 p-2"
+            className="border rounded-md border-gray-500 p-2 -mt-1"
           />
+          {emailError && <p className="text-red-500">{emailError}</p>}
         </div>
         <div className="flex flex-col gap-1 mb-2">
           <label className="text-zinc-200">Password</label>
@@ -41,8 +69,9 @@ const LoginPage = () => {
             value={password}
             disabled={loginInProgress}
             onChange={(ev) => setPassword(ev.target.value)}
-            className="border rounded-md border-gray-500 p-2"
+            className="border rounded-md border-gray-500 p-2 -mt-1"
           />
+          {passwordError && <p className="text-red-500">{passwordError}</p>}
         </div>
         <button disabled={loginInProgress} type="submit" className="mt-2">
           Login

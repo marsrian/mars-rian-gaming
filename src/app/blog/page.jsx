@@ -17,7 +17,7 @@ async function getBlogData() {
     return await res.json();
   } catch (error) {
     console.error("Error fetching blog data:", error);
-    return []; // Return an empty array to match the expected return type
+    return [];
   }
 }
 

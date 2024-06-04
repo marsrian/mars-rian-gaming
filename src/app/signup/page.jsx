@@ -8,11 +8,13 @@ import { FcGoogle } from "react-icons/fc";
 const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [creatingUser, setCreatingUser] = useState(false);
   const [userCreated, setUserCreated] = useState(false);
   const [error, setError] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
   async function handleFormSubmit(ev) {
     ev.preventDefault();
@@ -22,6 +24,7 @@ const SignUpPage = () => {
     setError("");
     setEmailError("");
     setPasswordError("");
+    setConfirmPasswordError("");
     // Validate Email:
     if (!email) {
       setEmailError("Email cannot be empty.");
@@ -36,6 +39,12 @@ const SignUpPage = () => {
     }
     if (password.length < 6) {
       setPasswordError("Password must be at least 6 characters long.");
+      setCreatingUser(false);
+      return;
+    }
+    // Validate confirm password:
+    if (password !== confirmPassword) {
+      setConfirmPasswordError("Passwords do not match.");
       setCreatingUser(false);
       return;
     }
@@ -61,7 +70,7 @@ const SignUpPage = () => {
     <div className={`${quantico.className}`}>
       <h1 className="text-center text-primary text-4xl mb-4">Register</h1>
       {userCreated && (
-        <div className="my-4 text-center">
+        <div className="my-4 text-center text-white">
           User created.
           <br />
           Now you can{" "}
@@ -86,7 +95,7 @@ const SignUpPage = () => {
             value={email}
             disabled={creatingUser}
             onChange={(ev) => setEmail(ev.target.value)}
-            className="border rounded-md border-gray-500 p-2"
+            className="border rounded-md border-gray-500 p-2 -mt-1"
           />
           {emailError && <p className="text-red-500">{emailError}</p>}
         </div>
@@ -98,9 +107,21 @@ const SignUpPage = () => {
             value={password}
             disabled={creatingUser}
             onChange={(ev) => setPassword(ev.target.value)}
-            className="border rounded-md border-gray-500 p-2"
+            className="border rounded-md border-gray-500 p-2 -mt-1"
           />
           {passwordError && <p className="text-red-500">{passwordError}</p>}
+        </div>
+        <div className="flex flex-col gap-1 mb-2">
+          <label className="text-zinc-200">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="confirm password"
+            value={confirmPassword}
+            disabled={creatingUser}
+            onChange={(ev) => setConfirmPassword(ev.target.value)}
+            className="border rounded-md border-gray-500 p-2 -mt-1"
+          />
+          {confirmPasswordError && <p className="text-red-500">{confirmPasswordError}</p>}
         </div>
         <button type="submit" disabled={creatingUser} className="mt-2">
           Register

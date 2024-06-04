@@ -1,18 +1,6 @@
 import { quantico, russoOne } from "@/utils/fonts";
 import Image from "next/image";
 
-// const getSingleGameData = async ({ id }) => {
-//   try {
-//     const res = await fetch(process.env.NEXTAUTH_URL + `/api/games/${id}`);
-//     if (!res.ok) {
-//       throw new Error("Failed to fetch data");
-//     }
-//     return res.json();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
 async function getSingleGameData({ id }) {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + `/api/games/${id}`);
