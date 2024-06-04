@@ -25,14 +25,14 @@ const UserForm = ({ user, onSave }) => {
 
   return (
     <div className={`${quantico.className} grid grid-cols-1 md:grid-cols-3 gap-6`}>
-      <div className="col-span-1 p-2 rounded-lg">
+      <div className="col-span-1 p-2">
         {user?.image && (
           <Image
             src={user?.image}
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             alt="avatar"
-            className="rounded-full mb-1 mx-auto"
+            className="rounded-full mb-1 mx-auto w-[200px] h-[200px] md:w-[250px] md:h-[250px]"
           />
           // TODO: Update Image:
           // <label>
@@ -51,6 +51,7 @@ const UserForm = ({ user, onSave }) => {
         className="md:col-span-2"
         onSubmit={(ev) =>
           onSave(ev, {
+            image,
             name: userName,
             streetAddress,
             phone,
@@ -61,6 +62,16 @@ const UserForm = ({ user, onSave }) => {
           })
         }
       >
+        <div className="flex flex-col mb-2">
+          <label className="text-white">Image Upload</label>
+          <input
+            type="text"
+            placeholder="Image Link"
+            value={user?.image}
+            onChange={(ev) => setImage(ev.target.value)}
+            className="border p-2 rounded-md"
+          />
+        </div>
         <div className="flex flex-col mb-2">
           <label className="text-white">First and Last name</label>
           <input

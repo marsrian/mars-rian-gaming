@@ -4,7 +4,6 @@ const UserInfoSchema = new Schema(
   {
     email: { type: String, required: true },
     phone: { type: String },
-    image: { type: String },
     city: { type: String },
     postalCode: { type: String },
     streetAddress: { type: String },

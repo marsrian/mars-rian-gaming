@@ -16,7 +16,7 @@ const Header = () => {
   const pathName = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const { loading, data } = useProfile();
-  console.log(data);
+  console.log(session);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +94,7 @@ const Header = () => {
         <div className="hidden md:flex gap-6 text-white">
           {status === "authenticated" && (
             <div className="flex items-center">
-              <p className="whitespace-nowrap mr-2">Hello, {userName}</p>
+              <Link href="/profile" className="whitespace-nowrap mr-2">{userName}</Link>
               <button
                 onClick={() => signOut()}
                 className="bg-green-600 rounded-full text-white px-8 py-2"
@@ -166,7 +166,8 @@ const Header = () => {
                 <div className="block md:hidden mt-6">
                   {status === "authenticated" && (
                     <div className="flex flex-col gap-3">
-                      <p className="whitespace-nowrap">{userName}</p>
+                      {/* <p className="whitespace-nowrap">{userName}</p> */}
+                      <Link href="/profile" className="whitespace-nowrap">{userName}</Link>
                       <button
                         onClick={() => signOut()}
                         className="bg-green-600 rounded-full text-white px-8 py-2"

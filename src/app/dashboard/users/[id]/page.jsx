@@ -51,7 +51,7 @@ const EditUserPage = () => {
     return "You are not an admin";
   }
   return (
-    <section className="mt-8 max-w-2xl mx-auto px-2 md:px-0">
+    <section className="mt-8 px-2 md:px-0">
       <DashBoardTabs isAdmin={true} />
       <div className="mt-8">
         <UserForm user={user} onSave={handleSaveButtonClick} />
