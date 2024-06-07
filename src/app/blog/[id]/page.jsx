@@ -36,7 +36,7 @@ const SingleBlogPage = async ({ params }) => {
           return (
             <div key={d._id} className="mt-6">
               {d.description && (
-                <p className={`${quantico.className} mb-2 text-zinc-100`}>
+                <p className={`${quantico.className} mb-2 text-zinc-100 text-justify`}>
                   {d.description}
                 </p>
               )}

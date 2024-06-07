@@ -18,7 +18,7 @@ export default async function RootLayout({ children }) {
       <body
         className={`${inter.className} flex flex-col min-h-screen max-w-6xl mx-auto 
         bg-[url(/bg-1.jpg)] 
-        bg-cover bg-center`}
+        bg-cover bg-center `}
       >
         <AppProvider>
           <Toaster />
