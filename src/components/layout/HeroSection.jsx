@@ -28,6 +28,7 @@ const HeroSection = () => {
           src="/controller.jpg"
           width={400}
           height={400}
+          priority
           alt="controller"
           className="rounded-lg"
         />

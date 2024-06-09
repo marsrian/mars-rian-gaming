@@ -15,7 +15,7 @@ const Header = () => {
   let userName = userData?.name || userData?.email;
   const pathName = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const { loading, data } = useProfile();
+  const { data } = useProfile();
   console.log(session);
 
   useEffect(() => {
@@ -92,6 +92,9 @@ const Header = () => {
           )}
         </ul>
         <div className="hidden md:flex gap-6 text-white">
+          {status === "loading" && (
+            <p>Loading...</p>
+          )}
           {status === "authenticated" && (
             <div className="flex items-center">
               <Link href="/profile" className="whitespace-nowrap mr-2">{userName}</Link>

@@ -1,4 +1,4 @@
-import { model, models, Schema } from "mongoose";
+import mongoose, { model, models, Schema } from "mongoose";
 
 const UserInfoSchema = new Schema(
   {
@@ -9,6 +9,15 @@ const UserInfoSchema = new Schema(
     streetAddress: { type: String },
     country: { type: String },
     admin: { type: Boolean, default: false },
+    authorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    likes: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "User",
+      default: [],
+    },
   },
   { timestamps: true }
 );
