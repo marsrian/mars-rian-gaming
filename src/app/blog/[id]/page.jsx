@@ -6,7 +6,7 @@ async function getSingleBlogData({ id }) {
     const res = await fetch(process.env.NEXTAUTH_URL + `/api/blogs/${id}`, {
       next: {
         revalidate: 10,
-      }
+      },
     });
 
     if (!res.ok) {
@@ -36,7 +36,9 @@ const SingleBlogPage = async ({ params }) => {
           return (
             <div key={d._id} className="mt-6">
               {d.description && (
-                <p className={`${quantico.className} mb-2 text-zinc-100 text-justify`}>
+                <p
+                  className={`${quantico.className} mb-2 text-zinc-100 text-justify`}
+                >
                   {d.description}
                 </p>
               )}

@@ -6,5 +6,5 @@ export async function GET(req, { params }) {
   const { id } = params;
   await connectMongo();
   const game = await Game.findOne({ _id: id });
-  return NextResponse.json({ game }, { status: 200 });
+  return NextResponse.json( {game} , { status: 200 });
 }

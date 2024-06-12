@@ -18,7 +18,7 @@ async function getSingleGameData({ id }) {
 }
 
 const SingleGameInfoPage = async ({ params }) => {
-  const { game } = await getSingleGameData(params);
+  const {game}  = await getSingleGameData(params);
   const { _id, name, image, description, videos } = game;
   return (
     <div className="mb-8 px-4 md:px-0">

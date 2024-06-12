@@ -17,7 +17,7 @@ async function getGameData() {
 }
 
 const GamesAll = async () => {
-  const games  = await getGameData();
+  const {games}  = await getGameData();
   return (
     <div className="mt-12">
       <h1
