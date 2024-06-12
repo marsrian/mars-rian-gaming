@@ -1,16 +1,16 @@
 import HeroSection from "@/components/layout/HeroSection";
 import BlogPage from "./blog/page";
-import GamesPage from "./games/page";
+import GamesAll from "@/components/layout/GamesAll";
 
 const HomePage = () => {
   return (
     <div className="mt-8 mb-6">
       <HeroSection />
       <div className="mt-20">
-       <GamesPage />
+        <GamesAll />
       </div>
       <div className="mt-20">
-      <BlogPage />
+        <BlogPage />
       </div>
     </div>
   );

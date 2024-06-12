@@ -1,4 +1,4 @@
-import { microCharted, quantico } from "@/utils/fonts";
+import { quantico, tradeWinds } from "@/utils/fonts";
 import Link from "next/link";
 import { FaRegCalendarAlt, FaRegListAlt } from "react-icons/fa";
 
@@ -41,9 +41,9 @@ const BlogPage = async () => {
   return (
     <div className="mt-12">
       <h1
-        className={`${microCharted.className} text-4xl font-bold text-center text-white`}
+        className={`${tradeWinds.className} text-3xl md:text-4xl font-bold text-center text-white`}
       >
-        BLOG POST
+        RECENT BLOG
       </h1>
       <div className="grid grid-cols-1 gap-4 mt-6 px-2 md:px-0">
         {blogs.map((blog) => (

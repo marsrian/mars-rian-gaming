@@ -12,8 +12,22 @@ export async function POST(req) {
 export async function GET() {
   await connectMongo();
   const games = await Game.find();
-  return NextResponse.json(games);
+  return NextResponse.json({games});
 }
+
+// export async function GET(req) {
+//   await connectMongo();
+
+//   const url = new URL(req.url);
+//   const page = parseInt(url.searchParams.get("page")) || 1;
+//   const limit = parseInt(url.searchParams.get("limit")) || 3;
+//   const skip = (page - 1) * limit;
+
+//   const games = await Game.find().skip(skip).limit(limit);
+//   const total = await Game.countDocuments();
+  
+//   return NextResponse.json({ games, total });
+// }
 
 export async function PUT(req) {
   await connectMongo();

@@ -16,7 +16,6 @@ const Header = () => {
   const pathName = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const { data } = useProfile();
-  console.log(session);
 
   useEffect(() => {
     const handleScroll = () => {
