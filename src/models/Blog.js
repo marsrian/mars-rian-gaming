@@ -1,4 +1,4 @@
-import { models, model, Schema } from "mongoose";
+import mongoose, { models, model, Schema } from "mongoose";
 
 const DescSchema = new Schema({
   description: String,
@@ -11,6 +11,15 @@ const BlogSchema = new Schema(
     category: { type: "String" },
     video: { type: "String" },
     desc: { type: [DescSchema] },
+    authorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    likes: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "User",
+      default: [],
+    },
   },
   {
     timestamps: true,

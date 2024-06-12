@@ -4,7 +4,7 @@ import Link from "next/link";
 async function getGameData() {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + "/api/games", {
-      cache: "force-cache"
+      cache: "no-cache"
     });
 
     if (!res.ok) {

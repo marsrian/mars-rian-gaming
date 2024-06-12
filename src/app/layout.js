@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { Toaster } from "react-hot-toast";
-// import { AppProvider } from "@/components/AppContext";
 import Footer from "@/components/layout/Footer";
 import AppProvider from "@/components/AppContext";
 
