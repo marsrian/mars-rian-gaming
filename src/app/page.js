@@ -1,6 +1,6 @@
 import HeroSection from "@/components/layout/HeroSection";
 import BlogPage from "./blog/page";
-import GamesAll from "@/components/layout/GamesAll";
+import GamesAll from "@/app/games/GamesAll";
 
 const HomePage = () => {
   return (
