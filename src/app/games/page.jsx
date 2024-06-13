@@ -24,7 +24,7 @@ const GamesPage = async ({ searchParams }) => {
 
   const start = (Number(page) - 1) * Number(per_page);
   const end = start + Number(per_page);
-  const {games }= await getGameData();
+  const { games } = await getGameData();
   const allGames = games.slice(start, end);
   return (
     <div className="mt-12">
