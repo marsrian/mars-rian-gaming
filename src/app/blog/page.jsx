@@ -5,7 +5,9 @@ import { FaRegCalendarAlt, FaRegListAlt } from "react-icons/fa";
 async function getBlogData() {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + "/api/blogs", {
-      cache: "no-cache",
+      next: {
+        revalidate: 10,
+      }
     });
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -43,8 +45,9 @@ const formatDate = (dateString) => {
 };
 
 const BlogPage = async () => {
-  const data = await getBlogData();
-  const blogs = data.blogs || [];
+  // const data = await getBlogData();
+  // const blogs = data.blogs || [];
+  const {blogs} = await getBlogData() || [];
 
   return (
     <div className="mt-12">

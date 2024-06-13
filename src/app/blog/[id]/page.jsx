@@ -4,9 +4,7 @@ import Image from "next/image";
 async function getSingleBlogData({ id }) {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + `/api/blogs/${id}`, {
-      next: {
-        revalidate: 10,
-      },
+      cache: "no-store"
     });
 
     if (!res.ok) {
