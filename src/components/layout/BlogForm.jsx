@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import GameDescProps from "./GameDescProps";
 import { quantico } from "@/utils/fonts";
 
-
 const BlogForm = ({ onSubmit, blogItem }) => {
   const [title, setTitle] = useState(blogItem?.title || "");
   const [category, setCategory] = useState(blogItem?.category || "");
@@ -41,6 +40,8 @@ const BlogForm = ({ onSubmit, blogItem }) => {
         <label className="text-white">Title</label>
         <input
           type="text"
+          id=""
+          name=""
           value={title}
           onChange={(ev) => setTitle(ev.target.value)}
           placeholder="Game Name"
@@ -48,6 +49,8 @@ const BlogForm = ({ onSubmit, blogItem }) => {
         />
         <label className="text-white">Category</label>
         <select
+          id=""
+          name=""
           value={category}
           onChange={(ev) => setCategory(ev.target.value)}
           className="border p-2 rounded mb-2"
@@ -62,6 +65,8 @@ const BlogForm = ({ onSubmit, blogItem }) => {
         <label className="text-white">Video</label>
         <input
           type="text"
+          id=""
+          name=""
           value={video}
           onChange={(ev) => setVideo(ev.target.value)}
           placeholder="Game Description"

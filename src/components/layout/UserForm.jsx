@@ -24,7 +24,9 @@ const UserForm = ({ user, onSave }) => {
   }
 
   return (
-    <div className={`${quantico.className} grid grid-cols-1 md:grid-cols-3 gap-6`}>
+    <div
+      className={`${quantico.className} grid grid-cols-1 md:grid-cols-3 gap-6`}
+    >
       <div className="col-span-1 p-2">
         {user?.image && (
           <Image
@@ -66,6 +68,8 @@ const UserForm = ({ user, onSave }) => {
           <label className="text-white">Image Upload</label>
           <input
             type="text"
+            id=""
+            name=""
             placeholder="Image Link"
             value={user?.image}
             onChange={(ev) => setImage(ev.target.value)}
@@ -76,6 +80,8 @@ const UserForm = ({ user, onSave }) => {
           <label className="text-white">First and Last name</label>
           <input
             type="text"
+            id=""
+            name=""
             placeholder="First and Last name"
             value={userName}
             onChange={(ev) => setUserName(ev.target.value)}
@@ -86,6 +92,8 @@ const UserForm = ({ user, onSave }) => {
           <label className="text-white">Email</label>
           <input
             type="email"
+            id=""
+            name=""
             disabled={true}
             value={user?.email}
             className="border p-2 rounded-md text-gray-300"
@@ -109,6 +117,7 @@ const UserForm = ({ user, onSave }) => {
             >
               <input
                 id="adminCb"
+                name=""
                 type="checkbox"
                 className=""
                 value={"1"}

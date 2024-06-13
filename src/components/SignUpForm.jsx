@@ -6,65 +6,65 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 const SignUpForm = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [creatingUser, setCreatingUser] = useState(false);
-    const [userCreated, setUserCreated] = useState(false);
-    const [error, setError] = useState(false);
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
-    const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  
-    async function handleFormSubmit(ev) {
-      ev.preventDefault();
-      setCreatingUser(true);
-      setUserCreated(false);
-      setError(false);
-      setError("");
-      setEmailError("");
-      setPasswordError("");
-      setConfirmPasswordError("");
-      // Validate Email:
-      if (!email) {
-        setEmailError("Email cannot be empty.");
-        setCreatingUser(false);
-        return;
-      }
-      // Validate password:
-      if (!password) {
-        setPasswordError("Password cannot be empty.");
-        setCreatingUser(false);
-        return;
-      }
-      if (password.length < 6) {
-        setPasswordError("Password must be at least 6 characters long.");
-        setCreatingUser(false);
-        return;
-      }
-      // Validate confirm password:
-      if (password !== confirmPassword) {
-        setConfirmPasswordError("Passwords do not match.");
-        setCreatingUser(false);
-        return;
-      }
-      const response = await fetch(`/api/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
-      if (response.ok) {
-        setUserCreated(true);
-      } else {
-        setError(true);
-      }
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [creatingUser, setCreatingUser] = useState(false);
+  const [userCreated, setUserCreated] = useState(false);
+  const [error, setError] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
+
+  async function handleFormSubmit(ev) {
+    ev.preventDefault();
+    setCreatingUser(true);
+    setUserCreated(false);
+    setError(false);
+    setError("");
+    setEmailError("");
+    setPasswordError("");
+    setConfirmPasswordError("");
+    // Validate Email:
+    if (!email) {
+      setEmailError("Email cannot be empty.");
       setCreatingUser(false);
+      return;
     }
+    // Validate password:
+    if (!password) {
+      setPasswordError("Password cannot be empty.");
+      setCreatingUser(false);
+      return;
+    }
+    if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters long.");
+      setCreatingUser(false);
+      return;
+    }
+    // Validate confirm password:
+    if (password !== confirmPassword) {
+      setConfirmPasswordError("Passwords do not match.");
+      setCreatingUser(false);
+      return;
+    }
+    const response = await fetch(`/api/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    if (response.ok) {
+      setUserCreated(true);
+    } else {
+      setError(true);
+    }
+    setCreatingUser(false);
+  }
   return (
     <div className={`${quantico.className}`}>
       <h1 className="text-center text-primary text-4xl mb-4">Register</h1>
@@ -90,6 +90,8 @@ const SignUpForm = () => {
           <label className="text-zinc-200">Email</label>
           <input
             type="email"
+            id=""
+            name=""
             placeholder="email"
             value={email}
             disabled={creatingUser}
@@ -102,6 +104,8 @@ const SignUpForm = () => {
           <label className="text-zinc-200">Password</label>
           <input
             type="password"
+            id=""
+            name=""
             placeholder="password"
             value={password}
             disabled={creatingUser}
@@ -114,13 +118,17 @@ const SignUpForm = () => {
           <label className="text-zinc-200">Confirm Password</label>
           <input
             type="password"
+            id=""
+            name=""
             placeholder="confirm password"
             value={confirmPassword}
             disabled={creatingUser}
             onChange={(ev) => setConfirmPassword(ev.target.value)}
             className="border rounded-md border-gray-500 p-2 -mt-1"
           />
-          {confirmPasswordError && <p className="text-red-500">{confirmPasswordError}</p>}
+          {confirmPasswordError && (
+            <p className="text-red-500">{confirmPasswordError}</p>
+          )}
         </div>
         <button type="submit" disabled={creatingUser} className="mt-2">
           Register
@@ -137,13 +145,13 @@ const SignUpForm = () => {
         </button>
         <div className="text-center my-4 text-white border-t pt-4">
           Existing account?{" "}
-          <Link className="underline" href={"/login"} >
+          <Link className="underline" href={"/login"}>
             Login here &raquo;
           </Link>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignUpForm
+export default SignUpForm;

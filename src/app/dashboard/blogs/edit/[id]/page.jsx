@@ -17,7 +17,7 @@ const EditBlogPage = () => {
   useEffect(() => {
     fetch("/api/blogs").then((res) => {
       res.json().then((items) => {
-        const item = items.find((i) => i._id === id);
+        const item = items.blogs.find((i) => i._id === id);
         setBlogItem(item);
       });
     });

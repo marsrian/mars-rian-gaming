@@ -17,7 +17,7 @@ const EditGamePage = () => {
   useEffect(() => {
     fetch("/api/games").then((res) => {
       res.json().then((items) => {
-        const item = items.find((i) => i._id === id);
+        const item = items.games.find((i) => i._id === id);
         setGameItem(item);
       });
     });

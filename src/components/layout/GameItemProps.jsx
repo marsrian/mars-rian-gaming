@@ -50,6 +50,8 @@ const GameItemProps = ({ name, props, setProps, addLabel }) => {
                 <label>Serial:</label>
                 <input
                   type="number"
+                  id=""
+                  name=""
                   placeholder="Serial Number"
                   value={video.serial}
                   onChange={(ev) => editProp(ev, index, "serial")}
@@ -60,6 +62,8 @@ const GameItemProps = ({ name, props, setProps, addLabel }) => {
                 <label>Video Link:</label>
                 <input
                   type="text"
+                  id=""
+                  name=""
                   placeholder="Video Link"
                   value={video.videoLink}
                   onChange={(ev) => editProp(ev, index, "videoLink")}
@@ -72,7 +76,7 @@ const GameItemProps = ({ name, props, setProps, addLabel }) => {
                   type="button"
                   className="bg-white mt-4 px-2"
                 >
-                 <Trash />
+                  <Trash />
                 </button>
               </div>
             </div>

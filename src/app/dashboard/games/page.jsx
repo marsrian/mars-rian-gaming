@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const GamesPage = () => {
-  const [gameItems, setGameItems] = useState([]);
+  const [gameItems, setGameItems] = useState({ games: [] });
   const { loading, data } = useProfile();
 
   useEffect(() => {
@@ -37,8 +37,8 @@ const GamesPage = () => {
       <div className={`${quantico.className}`}>
         <h2 className="text-sm text-gray-500 mt-8">Edit game item:</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
-          {gameItems.length > 0 &&
-            gameItems.map((item) => (
+          {gameItems.games.length > 0 &&
+            gameItems.games.map((item) => (
               <Link
                 href={"/dashboard/games/edit/" + item._id}
                 className="bg-gray-200 rounded-lg p-4"

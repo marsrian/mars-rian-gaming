@@ -98,6 +98,8 @@ const CategoryPage = () => {
         </label>
         <input
           type="text"
+          id=""
+          name=""
           placeholder="Category Name"
           value={categoryName}
           onChange={(ev) => setCategoryName(ev.target.value)}

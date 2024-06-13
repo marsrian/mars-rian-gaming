@@ -47,6 +47,8 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
           <label className="text-white">Image</label>
           <input
             type="text"
+            id=""
+            name=""
             value={image}
             onChange={(ev) => setImage(ev.target.value)}
             placeholder="Image Link"
@@ -57,6 +59,8 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
           <label className="text-white">Name</label>
           <input
             type="text"
+            id=""
+            name=""
             value={name}
             onChange={(ev) => setName(ev.target.value)}
             placeholder="Game Name"
@@ -65,6 +69,8 @@ const GameFormPage = ({ onSubmit, gameItem }) => {
           <label className="text-white">Description</label>
           <input
             type="text"
+            id=""
+            name=""
             value={description}
             onChange={(ev) => setDescription(ev.target.value)}
             placeholder="Game Description"

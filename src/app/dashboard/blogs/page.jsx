@@ -8,13 +8,14 @@ import { useEffect, useState } from "react";
 import { FaRegCalendarAlt, FaRegListAlt } from "react-icons/fa";
 
 const BlogPage = () => {
-  const [blogItems, setBlogItems] = useState([]);
+  const [blogItems, setBlogItems] = useState({blogs: []});
   const { loading, data } = useProfile();
 
   useEffect(() => {
     fetch("/api/blogs").then((res) => {
       res.json().then((blogItems) => {
         setBlogItems(blogItems);
+        console.log(blogItems)
       });
     });
   }, []);
@@ -66,8 +67,8 @@ const BlogPage = () => {
       <div className={`${quantico.className}`}>
         <h2 className="text-sm text-gray-500 mt-8">Edit blog item:</h2>
         <div className="grid grid-cols-1 gap-2">
-          {blogItems.length > 0 &&
-            blogItems.map((item) => (
+          {blogItems.blogs.length > 0 &&
+            blogItems.blogs.map((item) => (
               <div
                 key={item._id}
                 className="border border-gray-500 rounded-md p-2"

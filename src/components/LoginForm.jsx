@@ -53,6 +53,8 @@ const LoginForm = () => {
           <label className="text-zinc-200">Email</label>
           <input
             type="email"
+            id=""
+            name=""
             placeholder="email"
             value={email}
             disabled={loginInProgress}
@@ -65,6 +67,8 @@ const LoginForm = () => {
           <label className="text-zinc-200">Password</label>
           <input
             type="password"
+            id=""
+            name=""
             placeholder="password"
             value={password}
             disabled={loginInProgress}
@@ -87,14 +91,14 @@ const LoginForm = () => {
           <FcGoogle /> Login with google
         </button>
         <div className="text-center my-4 text-white border-t pt-4">
-        Don&apos;t have an account?{" "}
-          <Link className="underline" href="/signup" >
-          SignUp here &raquo;
+          Don&apos;t have an account?{" "}
+          <Link className="underline" href="/signup">
+            SignUp here &raquo;
           </Link>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

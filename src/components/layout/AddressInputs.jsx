@@ -6,6 +6,8 @@ const AddressInputs = ({ addressProps, setAddressProps }) => {
         <label className="text-white">Phone</label>
         <input
           type="tel"
+          id=""
+          name=""
           placeholder="Phone number"
           value={phone}
           onChange={(ev) => setAddressProps("phone", ev.target.value)}
@@ -16,6 +18,8 @@ const AddressInputs = ({ addressProps, setAddressProps }) => {
         <label className="text-white">Street address</label>
         <input
           type="text"
+          id=""
+          name=""
           placeholder="Street address"
           value={streetAddress}
           onChange={(ev) => setAddressProps("streetAddress", ev.target.value)}
@@ -27,6 +31,8 @@ const AddressInputs = ({ addressProps, setAddressProps }) => {
           <label className="text-white">City</label>
           <input
             type="text"
+            id=""
+            name=""
             placeholder="City"
             value={city}
             onChange={(ev) => setAddressProps("city", ev.target.value)}
@@ -37,6 +43,8 @@ const AddressInputs = ({ addressProps, setAddressProps }) => {
           <label className="text-white">Postal code</label>
           <input
             type="text"
+            id=""
+            name=""
             placeholder="Postal code"
             value={postalCode}
             onChange={(ev) => setAddressProps("postalCode", ev.target.value)}
@@ -48,6 +56,8 @@ const AddressInputs = ({ addressProps, setAddressProps }) => {
         <label className="text-white">Country</label>
         <input
           type="text"
+          id=""
+          name=""
           placeholder="Country"
           value={country}
           onChange={(ev) => setAddressProps("country", ev.target.value)}

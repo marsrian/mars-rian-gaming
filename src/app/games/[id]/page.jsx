@@ -36,7 +36,7 @@ const SingleGameInfoPage = async ({ params }) => {
           return (
             <div key={v._id} className="mt-6">
               <h1 className={`${quantico.className} mb-2 text-3xl text-white`}>Chapter - {v.serial} gameplay</h1>
-              <iframe src={v.videoLink} frameborder="0" allowfullscreen className="w-full h-60 md:h-[600px]" />
+              <iframe src={v.videoLink} frameBorder="0" allowFullScreen className="w-full h-60 md:h-[600px]" />
             </div>
           );
         })}
