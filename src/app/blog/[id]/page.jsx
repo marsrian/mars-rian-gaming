@@ -12,7 +12,6 @@ async function getSingleBlogData({ id }) {
     return await res.json();
   } catch (error) {
     console.error("Error fetching blog data:", error);
-    return [];
   }
 }
 
