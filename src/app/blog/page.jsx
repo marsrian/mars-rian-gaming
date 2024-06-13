@@ -45,9 +45,7 @@ const formatDate = (dateString) => {
 };
 
 const BlogPage = async () => {
-  // const data = await getBlogData();
-  // const blogs = data.blogs || [];
-  const {blogs} = await getBlogData() || [];
+  const {blogs} = await getBlogData();
 
   return (
     <div className="mt-12">

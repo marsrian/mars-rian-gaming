@@ -6,7 +6,7 @@ async function getGameData() {
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/games`, {
       next: {
         revalidate: 10,
-      }
+      },
     });
 
     if (!res.ok) {
@@ -28,7 +28,7 @@ const GamesAll = async () => {
         RECENT GAMES WALKTHROUGH
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 px-4 md:px-0">
-        {games.map((game) => (
+        {games.slice(0, 6).map((game) => (
           <div
             key={game._id}
             className="relative h-48 bg-cover bg-center"

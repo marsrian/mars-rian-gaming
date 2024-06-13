@@ -3,9 +3,7 @@ import Image from "next/image";
 
 async function getSingleBlogData({ id }) {
   try {
-    const res = await fetch(process.env.NEXTAUTH_URL + `/api/blogs/${id}`, {
-      cache: "no-store"
-    });
+    const res = await fetch(process.env.NEXTAUTH_URL + `/api/blogs/${id}`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -20,7 +18,7 @@ async function getSingleBlogData({ id }) {
 
 const SingleBlogPage = async ({ params }) => {
   const { blog } = await getSingleBlogData(params);
-  const { _id, title, category, video, desc } = blog;
+  const { title, category, video, desc } = blog;
   return (
     <div className="mb-4 md:mb-8 px-4 md:px-0">
       <h1
