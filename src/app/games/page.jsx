@@ -1,13 +1,11 @@
-// import PaginationControls from "@/components/Pagination";
+import PaginationControls from "@/components/Pagination";
 import { quantico, tradeWinds } from "@/utils/fonts";
 import Link from "next/link";
 
 async function getGameData() {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + "/api/games", {
-      next: {
-        revalidate: 10,
-      },
+      cache: "no-cache"
     });
 
     if (!res.ok) {
@@ -19,14 +17,14 @@ async function getGameData() {
   }
 }
 
-const GamesPage = async () => {
-  // const page = searchParams["page"] ?? "1";
-  // const per_page = searchParams["per_page"] ?? "6";
+const GamesPage = async ({searchParams}) => {
+  const page = searchParams["page"] ?? "1";
+  const per_page = searchParams["per_page"] ?? "6";
 
-  // const start = (Number(page) - 1) * Number(per_page);
-  // const end = start + Number(per_page);
+  const start = (Number(page) - 1) * Number(per_page);
+  const end = start + Number(per_page);
   const { games } = await getGameData();
-  // const allGames = games.slice(start, end);
+  const allGames = games.slice(start, end);
   return (
     <div className="mt-12">
       <h1
@@ -35,8 +33,8 @@ const GamesPage = async () => {
         ALL GAMES WALKTHROUGH
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 px-4 md:px-0">
-        {games.length > 0 &&
-          games.map((game) => (
+        {allGames.length > 0 &&
+          allGames.map((game) => (
             <div
               key={game._id}
               className="relative h-48 bg-cover bg-center"
@@ -58,10 +56,10 @@ const GamesPage = async () => {
             </div>
           ))}
       </div>
-      {/* <PaginationControls
+      <PaginationControls
         hasNextPage={end < games.length}
         hasPrevPage={start > 0}
-      /> */}
+      />
     </div>
   );
 };

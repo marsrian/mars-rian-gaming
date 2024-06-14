@@ -1,9 +1,7 @@
 export async function getGamesData() {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + "/api/games", {
-      next: {
-        revalidate: 10,
-      },
+      cache: "force-cache"
     });
 
     if (!res.ok) {
