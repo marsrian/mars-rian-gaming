@@ -7,7 +7,7 @@ async function getBlogData() {
     const res = await fetch(process.env.NEXTAUTH_URL + "/api/blogs", {
       next: {
         revalidate: 10,
-      }
+      },
     });
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -44,7 +44,7 @@ const formatDate = (dateString) => {
 };
 
 const BlogPage = async () => {
-  const {blogs} = await getBlogData();
+  const { blogs } = await getBlogData();
 
   return (
     <div className="mt-12">
@@ -54,26 +54,27 @@ const BlogPage = async () => {
         RECENT BLOG
       </h1>
       <div className="grid grid-cols-1 gap-4 mt-6 px-2 md:px-0">
-        {blogs.map((blog) => (
-          <div key={blog._id} className="border p-2 rounded-md">
-            <div className="">
-              <Link
-                href={`/blog/${blog._id}`}
-                className={`${quantico.className} text-lg text-blue-400 hover:text-blue-600`}
-              >
-                {blog.title}
-              </Link>
-              <div className="flex justify-between mt-1 text-gray-400">
-                <p className="flex items-center gap-1">
-                  <FaRegListAlt /> {blog.category}
-                </p>
-                <p className="flex items-center gap-1">
-                  <FaRegCalendarAlt /> {formatDate(blog.createdAt)}
-                </p>
+        {blogs.length > 0 &&
+          blogs.map((blog) => (
+            <div key={blog._id} className="border p-2 rounded-md">
+              <div className="">
+                <Link
+                  href={`/blog/${blog._id}`}
+                  className={`${quantico.className} text-lg text-blue-400 hover:text-blue-600`}
+                >
+                  {blog.title}
+                </Link>
+                <div className="flex justify-between mt-1 text-gray-400">
+                  <p className="flex items-center gap-1">
+                    <FaRegListAlt /> {blog.category}
+                  </p>
+                  <p className="flex items-center gap-1">
+                    <FaRegCalendarAlt /> {formatDate(blog.createdAt)}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
