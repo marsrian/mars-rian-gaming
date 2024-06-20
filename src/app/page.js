@@ -1,6 +1,7 @@
 import HeroSection from "@/components/layout/HeroSection";
-import BlogPage from "./blog/page";
 import GamesAll from "@/components/layout/GamesAll";
+import { Suspense } from "react";
+import RecentBlogs from "@/components/layout/RecentBlogs";
 
 const HomePage = () => {
   return (
@@ -9,9 +10,11 @@ const HomePage = () => {
       <div className="mt-20">
         <GamesAll />
       </div>
+      <Suspense fallback="">
       <div className="mt-20">
-        <BlogPage />
+        <RecentBlogs />
       </div>
+      </Suspense>
     </div>
   );
 };

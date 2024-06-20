@@ -1,8 +1,9 @@
 import { quantico, tradeWinds } from "@/utils/fonts";
 import Link from "next/link";
+import React from "react";
 import { FaRegCalendarAlt, FaRegListAlt } from "react-icons/fa";
 
-async function getBlogData() {
+async function getBlogInfo() {
   try {
     const res = await fetch(process.env.NEXTAUTH_URL + "/api/blogs", {
       next: {
@@ -44,15 +45,14 @@ const formatDate = (dateString) => {
   return `${day} ${month} ${year}`;
 };
 
-const BlogPage = async () => {
-  const { blogs } = await getBlogData();
-
+const RecentBlogs = async () => {
+  const { blogs } = await getBlogInfo();
   return (
     <div className="mt-12">
       <h1
         className={`${tradeWinds.className} text-3xl md:text-4xl font-bold text-center text-white`}
       >
-        ALL BLOGS
+        RECENT BLOGS
       </h1>
       <div className="grid grid-cols-1 gap-4 mt-6 px-2 md:px-0">
         {blogs.length > 0 &&
@@ -81,4 +81,4 @@ const BlogPage = async () => {
   );
 };
 
-export default BlogPage;
+export default RecentBlogs;

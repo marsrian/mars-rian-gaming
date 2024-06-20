@@ -3,7 +3,9 @@ import Image from "next/image";
 
 async function getSingleGameData({ id }) {
   try {
-    const res = await fetch(process.env.NEXTAUTH_URL + `/api/games/${id}`);
+    const res = await fetch(process.env.NEXTAUTH_URL + `/api/games/${id}`, {
+      cache: "no-store"
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
